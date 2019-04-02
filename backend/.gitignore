@@ -6,7 +6,6 @@ node_modules
 .env.local
 venv
 .env.*.local
-.flaskenv
 __pycache__
 
 
