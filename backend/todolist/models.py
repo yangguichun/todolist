@@ -12,7 +12,7 @@ class Todo(db.Model):
             del dict["_sa_instance_state"]
         return dict
 
-@db.event.listens_for(Todo.title, 'set')
-def increment_edit_time(target, value, oldValue, initiator):
-    if target.editTime is not None:
-        target.editTime += 1
+# @db.event.listens_for(Todo.title, 'set')
+# def increment_edit_time(target, value, oldValue, initiator):
+#     if target.editTime is not None:
+#         target.editTime += 1

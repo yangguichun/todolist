@@ -1,6 +1,7 @@
 from todolist import app, db
 from todolist.models import Todo
 import click
+from datetime import datetime
 
 
 @app.cli.command()
@@ -8,10 +9,12 @@ def createtable():
     db.create_all()
     click.echo('table created')
 
+
 @app.cli.command()
 def droptable():
     db.drop_all()
     click.echo('table droped')
+
 
 @app.cli.command()
 @click.argument('id')
@@ -36,6 +39,7 @@ def inittodo():
         db.session.commit()
     click.echo('init the todolist')
 
+
 @app.cli.command()
 def readtodo():
     todos = Todo.query.all()
@@ -54,6 +58,7 @@ def cleartodo():
         db.session.delete(todo)
     db.session.commit()
     click.echo('clear todolist table')
+
 
 @app.cli.command()
 def hello():
